@@ -1,0 +1,25 @@
+@media (min-width: 1367px) {
+  .main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    min-height: 900px;
+    margin: 0px;
+    background: linear-gradient(90deg, rgba(20, 17, 56, 1), rgba(0, 0, 0, 1));
+  }
+}
+
+@media (max-width: 1366px) {
+  .main-div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+    min-height: 768px;
+    margin: 0px;
+    background: linear-gradient(90deg, rgba(20, 17, 56, 1), rgba(0, 0, 0, 1));
+  }
+}

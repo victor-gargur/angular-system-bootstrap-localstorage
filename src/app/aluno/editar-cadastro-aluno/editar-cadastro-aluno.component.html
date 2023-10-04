@@ -1,0 +1,232 @@
+<!--Titulo-->
+<div class="menu-div menu-div-dimensions">
+  <div class="title-div title-div-border">
+    <i class="bi bi-book-half title-book"></i>
+    <h2>Editar Aluno</h2>
+  </div>
+  <!--Form Inicio-->
+  <form (ngSubmit)="formSubmit()" [formGroup]="formControl" #formDir="ngForm">
+    <!--Nome Area-->
+    <div class="div-input-first">
+      <div class="mb-3, form-floating">
+        <input
+          type="text"
+          class="form-control"
+          placeHolder="Nome Completo"
+          updateOn="blur"
+          formControlName="nomeAluno"
+          value=""
+          maxlength="30"
+          [class.is-valid]="formControl.controls['nomeAluno'].valid"
+          [class.is-invalid]="
+            formControl.controls['nomeAluno'].invalid &&
+            formControl.controls['nomeAluno'].touched
+          "
+        />
+        <label for="floatingInput">Nome Completo</label>
+      </div>
+      <!--Div campo inválido-->
+      <div
+        *ngIf="formControl.controls['nomeAluno'].invalid && formDir.submitted"
+      >
+        <!--Variações de texto-->
+        <small *ngIf="formControl.controls['nomeAluno'].hasError('minlength')">
+          Mínimo de 5 caracteres.
+        </small>
+        <small *ngIf="formControl.controls['nomeAluno'].hasError('required')">
+          Campo obrigatório
+        </small>
+      </div>
+    </div>
+    <!--CPF Area-->
+    <div class="div-input">
+      <div class="mb-3, form-floating">
+        <input
+          type="text"
+          class="form-control"
+          placeHolder="CPF"
+          mask="000.000.000-00"
+          updateOn="blur"
+          formControlName="cpfAluno"
+          [class.is-valid]="formControl.controls['cpfAluno'].valid"
+          [class.is-invalid]="
+            formControl.controls['cpfAluno'].invalid &&
+            formControl.controls['cpfAluno'].touched
+          "
+        />
+        <label for="floatingInput">CPF</label>
+      </div>
+      <!--Div campo inválido-->
+      <div
+        *ngIf="formControl.controls['cpfAluno'].invalid && formDir.submitted"
+      >
+        <!--Variações de texto-->
+        <small *ngIf="formControl.controls['cpfAluno'].hasError('minlength')">
+          CPF inválido
+        </small>
+        <small *ngIf="formControl.controls['cpfAluno'].hasError('required')">
+          Campo obrigatório
+        </small>
+      </div>
+    </div>
+    <!--Email Area-->
+    <div class="div-input">
+      <div class="mb-3, form-floating">
+        <input
+          type="email"
+          class="form-control"
+          placeHolder="Email"
+          updateOn="blur"
+          formControlName="emailAluno"
+          [class.is-valid]="formControl.controls['emailAluno'].valid"
+          [class.is-invalid]="
+            formControl.controls['emailAluno'].invalid &&
+            formControl.controls['emailAluno'].touched
+          "
+        />
+        <label for="floatingInput">Email</label>
+        <!--Div campo inválido-->
+        <div
+          *ngIf="
+            formControl.controls['emailAluno'].invalid && formDir.submitted
+          "
+        >
+          <!--Variações de texto-->
+          <small *ngIf="formControl.controls['emailAluno'].hasError('email')">
+            Email inválido
+          </small>
+          <small
+            *ngIf="formControl.controls['emailAluno'].hasError('required')"
+          >
+            Campo obrigatório
+          </small>
+        </div>
+      </div>
+    </div>
+    <!--Escola Area-->
+    <div class="div-input">
+      <div class="mb-3, form-floating">
+        <select
+          class="form-select"
+          (change)="filtrarEtapas(); filtrarTurmas()"
+          updateOn="blur"
+          formControlName="escolaAluno"
+          [class.is-valid]="formControl.controls['escolaAluno'].valid"
+          [class.is-invalid]="
+            formControl.controls['escolaAluno'].invalid &&
+            formControl.controls['escolaAluno'].touched
+          "
+        >
+          <option disabled selected value="">Selecione a Escola</option>
+          <option *ngFor="let escola of escolas" [value]="escola.nome">
+            {{ escola.nome }}
+          </option>
+        </select>
+        <label for="floatingSelect">Escola</label>
+        <!--Div campo inválido-->
+        <div
+          *ngIf="
+            formControl.controls['escolaAluno'].invalid && formDir.submitted
+          "
+        >
+          <!--Variações de texto-->
+          <small
+            *ngIf="formControl.controls['escolaAluno'].hasError('required')"
+          >
+            Campo obrigatório
+          </small>
+        </div>
+      </div>
+    </div>
+    <!--Etapa Area-->
+    <div class="div-input">
+      <div class="mb-3, form-floating">
+        <select
+          class="form-select"
+          formControlName="etapaAluno"
+          updateOn="blur"
+          (change)="filtrarTurmas()"
+          [class.is-valid]="formControl.controls['etapaAluno'].valid"
+          [class.is-invalid]="
+            formControl.controls['etapaAluno'].invalid &&
+            formControl.controls['etapaAluno'].touched
+          "
+        >
+          <option disabled selected value="">Selecione a Etapa</option>
+          <option *ngFor="let etapa of etapasFiltradas?.etapas" [value]="etapa">
+            {{ etapa }}
+          </option>
+        </select>
+        <label for="floatingSelect">Etapa</label>
+      </div>
+      <!--Div campo inválido-->
+      <div
+        *ngIf="
+          formControl.controls['etapaAluno'].invalid &&
+          formControl.controls['etapaAluno'].touched
+        "
+      >
+        <!--Variação de texto Seleção Escola-->
+        <small *ngIf="formControl.controls['escolaAluno'].hasError('required')">
+          Selecione a escola previamente
+        </small>
+      </div>
+      <!--Div campo inválido-->
+      <div
+        *ngIf="formControl.controls['etapaAluno'].invalid && formDir.submitted"
+      >
+        <!--Variação de texto Campo Obrigatório-->
+        <small *ngIf="formControl.controls['etapaAluno'].hasError('required')">
+          Campo Obrigatório
+        </small>
+      </div>
+    </div>
+    <!--Turma Area-->
+    <div class="div-input">
+      <div class="mb-3, form-floating">
+        <select
+          class="form-select"
+          formControlName="turmaAluno"
+          [class.is-valid]="formControl.controls['turmaAluno'].valid"
+          [class.is-invalid]="
+            formControl.controls['turmaAluno'].invalid &&
+            formControl.controls['turmaAluno'].touched
+          "
+        >
+          <option disabled selected value="">Selecione a Turma</option>
+          <option *ngFor="let turma of turmasFiltradas" [value]="turma">
+            {{ turma }}
+          </option>
+        </select>
+        <label for="floatingSelect">Turma</label>
+      </div>
+      <!--Div campo inválido-->
+      <div
+        *ngIf="
+          formControl.controls['turmaAluno'].invalid &&
+          formControl.controls['turmaAluno'].touched
+        "
+      >
+        <!--Variação de texto Seleção Etapa-->
+        <small *ngIf="formControl.controls['etapaAluno'].hasError('required')">
+          Selecione a etapa previamente
+        </small>
+      </div>
+      <!--Div campo inválido-->
+      <div
+        *ngIf="formControl.controls['turmaAluno'].invalid && formDir.submitted"
+      >
+        <!--Variação de texto Campo Obrigatório-->
+        <small *ngIf="formControl.controls['turmaAluno'].hasError('required')">
+          Campo Obrigatório
+        </small>
+      </div>
+    </div>
+    <!--Button Area-->
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button class="btn btn-secondary" routerLink="/aluno/lista-cadastros">
+      Voltar
+    </button>
+    <!--Form End-->
+  </form>
+</div>

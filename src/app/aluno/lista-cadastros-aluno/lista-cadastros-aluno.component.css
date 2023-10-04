@@ -1,0 +1,113 @@
+@media (min-width: 1367px) {
+  .menu-div-dimensions {
+    max-height: 880px;
+    height: 880px;
+    width: 1020px;
+  }
+
+  .sub-menu {
+    margin-top: 3%;
+    width: 90%;
+  }
+
+  .empty-div {
+    height: 40px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .pagination-td {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .table-buttons {
+    border: none;
+    background-color: transparent;
+  }
+
+  .end-buttons-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .end-buttons {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  th {
+    background-color: #323567;
+    color: white;
+  }
+
+  table {
+    border: 1px solid #323567;
+  }
+
+  table i {
+    color: #323567;
+  }
+}
+
+@media (max-width: 1366px) {
+  .menu-div-dimensions {
+    height: 730px;
+    width: 1020px;
+    margin-top: 1%;
+  }
+
+  .sub-menu {
+    margin-top: 2%;
+    width: 90%;
+  }
+
+  .empty-div {
+    height: 40px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .pagination-td {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .table-buttons {
+    border: none;
+    background-color: transparent;
+  }
+
+  .end-buttons-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .end-buttons {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  th {
+    background-color: #323567;
+    color: white;
+  }
+
+  table {
+    border: 1px solid #323567;
+  }
+
+  table i {
+    color: #323567;
+  }
+}

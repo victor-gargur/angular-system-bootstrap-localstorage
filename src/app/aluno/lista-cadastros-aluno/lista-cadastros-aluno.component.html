@@ -1,0 +1,202 @@
+<!--Titulo-->
+<div class="menu-div menu-div-dimensions">
+  <div class="title-div">
+    <i class="bi bi-book-half title-book"></i>
+    <h2>Alunos Cadastrados</h2>
+  </div>
+  <!--Div Menu-->
+  <div class="sub-menu">
+    <!--Campo de Pesquisa-->
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Pesquisar"
+        [(ngModel)]="dadoPesquisado"
+        (keyup.enter)="pesquisarAluno()"
+      />
+      <button class="btn btn-outline-secondary" (click)="pesquisarAluno()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+    <!--Lista de alunos-->
+    <div class="table-div">
+      <table class="table table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Escola</th>
+            <th scope="col">Turma</th>
+            <th scope="col">Lançar Notas</th>
+            <th scope="col">Editar Cadastro</th>
+            <th scope="col">Situação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let cadastro of cadastrosAtuais
+                | paginate
+                  : {
+                      itemsPerPage: registrosPorPagina,
+                      currentPage: paginaAtual,
+                      totalItems: totalRegistros
+                    }
+            "
+          >
+            <!-- Dados do Aluno -->
+            <td scope="row">{{ cadastro.idAluno }}</td>
+            <td>{{ cadastro.nomeAluno }}</td>
+            <td>{{ cadastro.escolaAluno }}</td>
+            <td>{{ cadastro.turmaAluno }}</td>
+            <td class="text-center">
+              <!--Table Buttons Area -->
+              <!-- Button para Lançar Notas -->
+              <button
+                type="button"
+                class="table-buttons"
+                routerLink="/aluno/aluno-nota/{{ cadastro.idAluno }}"
+              >
+                <i class="fa-solid fa-book"></i>
+              </button>
+            </td>
+            <!-- Button para Editar Cadastro -->
+            <td class="text-center">
+              <button
+                type="button"
+                class="table-buttons"
+                routerLink="/aluno/editar-cadastro/{{ cadastro.idAluno }}"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+            </td>
+            <!-- Situação Aluno {{ obterResultadoAluno(cadastro.idAluno) }}-->
+            <td>{{ cadastro.resultadoAluno }}</td>
+          </tr>
+          <!-- Nenhum Cadastro Encontrado -->
+          <tr *ngIf="cadastrosAtuais.length === 0">
+            <td class="empty-div" colspan="7">Nenhum registro encontrado.</td>
+          </tr>
+          <!-- Funções Paginação -->
+          <tr>
+            <td colspan="7" class="pagination-td">
+              <pagination-controls
+                (pageChange)="paginaAtual = $event"
+                previousLabel="Anterior"
+                nextLabel="Próxima"
+              ></pagination-controls>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--Button Area-->
+    <div class="end-buttons-area">
+      <button
+        routerLink="/aluno/criar-cadastro"
+        class="btn btn-primary end-buttons"
+      >
+        Novo Cadastro
+      </button>
+      <button
+        type="submit"
+        class="btn btn-secondary end-buttons"
+        routerLink="/home"
+      >
+        Voltar
+      </button>
+      <button
+        type="submit"
+        class="btn btn-danger end-buttons"
+        data-bs-toggle="modal"
+        data-bs-target="#modalGerarLista"
+      >
+        Gerar Lista Genérica
+      </button>
+      <!--Modal Gerar Lista Genérica-->
+      <div class="modal fade" id="modalGerarLista" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Alerta</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Os cadastros gerados anteriormente serão permanentemente
+              excluídos. Deseja continuar?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="confirmarGerarLista(true)"
+                data-bs-dismiss="modal"
+              >
+                Sim
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                (click)="confirmarGerarLista(false)"
+              >
+                Não
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-danger end-buttons"
+        data-bs-toggle="modal"
+        data-bs-target="#modalExcluirLista"
+      >
+        Limpar Lista
+      </button>
+      <!--Modal Excluir Lista-->
+      <div class="modal fade" id="modalExcluirLista" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Alerta</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Os cadastros gerados e notas lançadas serão permanentemente
+              excluídos. Deseja continuar?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="confirmarExcluirLista(true)"
+                data-bs-dismiss="modal"
+              >
+                Sim
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                (click)="confirmarExcluirLista(false)"
+              >
+                Não
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

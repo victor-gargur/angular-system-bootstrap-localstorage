@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #323567;
+  margin: 0px;
+  width: 100%;
+  border-radius: 27px 27px 0px 0px;
+  color: white;
+}
+
+.title-book {
+  font-size: 40px;
+}
+
+@media (min-width: 1367px) {
+  /*Div referente ao container pai de cada tela*/
+  .menu-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 1366px) {
+  /*Div referente ao container pai de cada tela*/
+  .menu-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 30px;
+  }
+}
+
+/* @media (min-width: 1367px) {
+ 
+}
+
+@media (max-width: 1366px) {
+  
+} */

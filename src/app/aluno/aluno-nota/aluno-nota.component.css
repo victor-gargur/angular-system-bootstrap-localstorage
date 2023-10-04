@@ -1,0 +1,161 @@
+@media (min-width: 1367px) {
+  .menu-div-dimensions {
+    max-height: 880px;
+    height: 880px;
+    width: 940px;
+  }
+
+  .sub-menu {
+    margin-top: 3%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #323567;
+  }
+
+  .data-div {
+    display: flex;
+    flex-direction: row;
+    background-color: #323567;
+    color: white;
+    width: 100%;
+    height: 45px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .data-div div {
+    width: 250px;
+    text-align: center;
+  }
+
+  .data-div div span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .discipline-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .score-input {
+    width: 80px;
+  }
+
+  .end-buttons-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .end-buttons {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  td,
+  th {
+    width: 100px;
+  }
+
+  .media-align {
+    text-align: center;
+  }
+
+  .instruction-div {
+    background-color: #323567;
+    color: white;
+    margin-top: 2%;
+    padding: 7px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .menu-div-dimensions {
+    max-height: 750px;
+    height: 750px;
+    width: 940px;
+    margin-top: 1%;
+  }
+
+  .sub-menu {
+    margin-top: 3%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #323567;
+  }
+
+  .data-div {
+    display: flex;
+    flex-direction: row;
+    background-color: #323567;
+    color: white;
+    width: 100%;
+    height: 45px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .data-div div {
+    width: 250px;
+    text-align: center;
+  }
+
+  .data-div div span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .discipline-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .score-input {
+    width: 80px;
+  }
+
+  .end-buttons-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .end-buttons {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  td,
+  th {
+    width: 100px;
+  }
+
+  .media-align {
+    text-align: center;
+  }
+
+  .instruction-div {
+    background-color: #323567;
+    color: white;
+    margin-top: 2%;
+    padding: 7px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 580px;
+    margin-right: 530px;
+    font-size: 14px;
+    width: 320px;
+  }
+}

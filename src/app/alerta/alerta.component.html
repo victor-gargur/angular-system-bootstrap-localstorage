@@ -1,0 +1,102 @@
+<!--Alertas Componente Home*/-->
+<div
+  class="alert-position alert alert-success d-flex align-items-center"
+  role="alert"
+  *ngIf="this.alertaService.sucessoCriarCadastro"
+>
+  Cadastro realizado com sucesso!
+</div>
+<div
+  class="alert-position alert alert-secondary"
+  role="alert"
+  *ngIf="this.alertaService.cadastroCancelado"
+>
+  Cadastro Cancelado.
+</div>
+<!--Alertas Componente Criar Cadastro-->
+<div
+  class="alert-position alert alert-danger"
+  role="alert"
+  *ngIf="this.alertaService.falhaCriarCadastro"
+>
+  Preencha todos os campos corretamente.
+</div>
+<div
+  class="alert-position alert alert-danger"
+  role="alert"
+  *ngIf="this.alertaService.emailExistente"
+>
+  Email ja cadastrado no sistema.
+</div>
+<div
+  class="alert-position alert alert-danger"
+  role="alert"
+  *ngIf="this.alertaService.cpfExistente"
+>
+  CPF ja cadastrado no sistema.
+</div>
+
+<!-- Alertas Componente Lista Cadastros -->
+
+<div
+  class="alert-position alert alert-success d-flex align-items-center"
+  role="alert"
+  *ngIf="this.alertaService.sucessoCriarLista"
+>
+  Lista gerada com sucesso!
+</div>
+
+<div
+  class="alert-position alert alert-success d-flex align-items-center"
+  role="alert"
+  *ngIf="this.alertaService.sucessoExcluirLista"
+>
+  Lista excluída com sucesso!
+</div>
+
+<!-- Alertas Componente Editar Cadastros -->
+
+<div
+  class="alert-position alert alert-success d-flex align-items-center"
+  role="alert"
+  *ngIf="this.alertaService.sucessoEditarCadastro"
+>
+  Cadastro alterado com sucesso!
+</div>
+
+<div
+  class="alert-position alert alert-danger"
+  role="alert"
+  *ngIf="this.alertaService.falhaEditarCadastro"
+>
+  Preencha todos os campos corretamente.
+</div>
+
+<!--Modelos Alerta
+
+!!!Alerta de sucesso!!!
+<div
+  class="alert-position alert alert-success d-flex align-items-center"
+  role="alert"
+  *ngIf="this.alertaService.nomeAlerta"
+>
+  Texto do alerta
+</div>
+!!!Alerta de Falha!!!
+<div
+  class="alert-position alert alert-danger"
+  role="alert"
+  *ngIf="this.alertaService.nomeAlerta"
+>
+  Texto do alerta
+</div>
+!!!Alerta Neutro!!!
+<div
+  class="alert-position alert alert-secondary"
+  role="alert"
+  *ngIf="this.alertaService.nomeAlerta"
+>
+  Texto do alerta
+</div>
+
+-->

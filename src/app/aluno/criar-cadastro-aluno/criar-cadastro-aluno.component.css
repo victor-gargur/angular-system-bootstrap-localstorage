@@ -1,0 +1,58 @@
+@media (min-width: 1367px) {
+  .menu-div-dimensions {
+    height: 880px;
+    width: 500px;
+  }
+
+  .title-div-border {
+    margin-bottom: 10%;
+  }
+
+  button {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  .div-input-first {
+    width: 400px;
+  }
+
+  .div-input {
+    margin-top: 20px;
+    width: 400px;
+  }
+
+  small {
+    color: red;
+  }
+}
+
+@media (max-width: 1366px) {
+  .menu-div-dimensions {
+    height: 750px;
+    width: 500px;
+    margin-top: 2%;
+  }
+
+  .title-div-border {
+    margin-bottom: 2%;
+  }
+
+  button {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  .div-input-first {
+    width: 400px;
+  }
+
+  .div-input {
+    margin-top: 10px;
+    width: 400px;
+  }
+
+  small {
+    color: red;
+  }
+}

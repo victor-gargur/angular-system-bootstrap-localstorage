@@ -1,0 +1,327 @@
+<!--Titulo-->
+<div class="menu-div menu-div-dimensions">
+  <div class="title-div">
+    <i class="bi bi-book-half" style="font-size: 40px"></i>
+    <h2>Lançamento de Notas</h2>
+  </div>
+  <!--Div Menu-->
+  <div class="sub-menu">
+    <!--Dados do Aluno-->
+    <div class="data-div">
+      <div>
+        <span>{{ cadastroAluno?.nomeAluno }}</span>
+      </div>
+      <div>
+        <span>{{ cadastroAluno?.escolaAluno }}</span>
+      </div>
+      <div>
+        <span>{{ cadastroAluno?.turmaAluno }}</span>
+      </div>
+    </div>
+    <!--Disciplinas e notas-->
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Disciplina</th>
+          <th>1º Unidade</th>
+          <th>2º Unidade</th>
+          <th>3º Unidade</th>
+          <th class="media-align">Média</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Portugues area-->
+        <tr>
+          <th>
+            <label for="portugues">Português:</label>
+          </th>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              step="0.01"
+              [(ngModel)]="notasAluno['portugues'][0]"
+              (change)="
+                limitarNotaMinMax('portugues', 0);
+                atualizarNota();
+                calcularMedia('portugues');
+                calcularResultado('portugues')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['portugues'][1]"
+              (change)="
+                limitarNotaMinMax('portugues', 1);
+                atualizarNota();
+                calcularMedia('portugues');
+                calcularResultado('portugues')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['portugues'][2]"
+              (change)="
+                limitarNotaMinMax('portugues', 2);
+                atualizarNota();
+                calcularMedia('portugues');
+                calcularResultado('portugues')
+              "
+            />
+          </td>
+          <td class="media-align">{{ mediaDisciplina["portugues"] }}</td>
+          <td>{{ resultadoDisciplina["portugues"] }}</td>
+        </tr>
+        <!--Matemática area-->
+        <tr>
+          <th>
+            <label for="matematica">Matemática:</label>
+          </th>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              step="0.01"
+              [(ngModel)]="notasAluno['matematica'][0]"
+              (change)="
+                limitarNotaMinMax('matematica', 0);
+                atualizarNota();
+                calcularMedia('matematica');
+                calcularResultado('matematica')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['matematica'][1]"
+              (change)="
+                limitarNotaMinMax('matematica', 1);
+                atualizarNota();
+                calcularMedia('matematica');
+                calcularResultado('matematica')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['matematica'][2]"
+              (change)="
+                limitarNotaMinMax('matematica', 2);
+                atualizarNota();
+                calcularMedia('matematica');
+                calcularResultado('matematica')
+              "
+            />
+          </td>
+          <td class="media-align">{{ mediaDisciplina["matematica"] }}</td>
+          <td>{{ resultadoDisciplina["matematica"] }}</td>
+        </tr>
+        <!--Historia area-->
+        <tr>
+          <th>
+            <label for="historia">História:</label>
+          </th>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              step="0.01"
+              [(ngModel)]="notasAluno['historia'][0]"
+              (change)="
+                limitarNotaMinMax('historia', 0);
+                atualizarNota();
+                calcularMedia('historia');
+                calcularResultado('historia')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['historia'][1]"
+              (change)="
+                limitarNotaMinMax('historia', 1);
+                atualizarNota();
+                calcularMedia('historia');
+                calcularResultado('historia')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['historia'][2]"
+              (change)="
+                limitarNotaMinMax('historia', 2);
+                atualizarNota();
+                calcularMedia('historia');
+                calcularResultado('historia')
+              "
+            />
+          </td>
+          <td class="media-align">{{ mediaDisciplina["historia"] }}</td>
+          <td>{{ resultadoDisciplina["historia"] }}</td>
+        </tr>
+        <!--Geografia area-->
+        <tr>
+          <th>
+            <label for="geografia">Geografia:</label>
+          </th>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              step="0.01"
+              [(ngModel)]="notasAluno['geografia'][0]"
+              (change)="
+                limitarNotaMinMax('geografia', 0);
+                atualizarNota();
+                calcularMedia('geografia');
+                calcularResultado('geografia')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['geografia'][1]"
+              (change)="
+                limitarNotaMinMax('geografia', 1);
+                atualizarNota();
+                calcularMedia('geografia');
+                calcularResultado('geografia')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['geografia'][2]"
+              (change)="
+                limitarNotaMinMax('geografia', 2);
+                atualizarNota();
+                calcularMedia('geografia');
+                calcularResultado('geografia')
+              "
+            />
+          </td>
+          <td class="media-align">{{ mediaDisciplina["geografia"] }}</td>
+          <td>{{ resultadoDisciplina["geografia"] }}</td>
+        </tr>
+        <!--Ed. Física area-->
+        <tr>
+          <th>
+            <label for="edFisica">Ed. Física:</label>
+          </th>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              step="0.01"
+              [(ngModel)]="notasAluno['edFisica'][0]"
+              (change)="
+                limitarNotaMinMax('edFisica', 0);
+                atualizarNota();
+                calcularMedia('edFisica');
+                calcularResultado('edFisica')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['edFisica'][1]"
+              (change)="
+                limitarNotaMinMax('edFisica', 1);
+                atualizarNota();
+                calcularMedia('edFisica');
+                calcularResultado('edFisica')
+              "
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              class="score-input form-control"
+              min="0"
+              max="10"
+              [(ngModel)]="notasAluno['edFisica'][2]"
+              (change)="
+                limitarNotaMinMax('edFisica', 2);
+                atualizarNota();
+                calcularMedia('edFisica');
+                calcularResultado('edFisica')
+              "
+            />
+          </td>
+          <td class="media-align">{{ mediaDisciplina["edFisica"] }}</td>
+          <td>{{ resultadoDisciplina["edFisica"] }}</td>
+        </tr>
+        <tr style="font-size: 20px; font-weight: bold; text-align: center">
+          <td colspan="6">Resultado Final: {{ resultadoAluno }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--Button Area-->
+  <div class="end-buttons-area">
+    <button
+      type="submit"
+      class="btn btn-secondary end-buttons"
+      routerLink="/aluno/lista-cadastros"
+    >
+      Voltar
+    </button>
+  </div>
+  <div class="instruction-div">
+    <h5>Instruções:</h5>
+    <p>-Os lançamentos são salvos automaticamente.</p>
+    <p>-A média para aprovação é 6.</p>
+    <p>-A nota máxima é 10.</p>
+  </div>
+</div>
