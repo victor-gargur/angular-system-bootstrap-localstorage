@@ -76,6 +76,15 @@ export class AlertaService {
       this.sucessoEditarCadastro = false;
     }, 3000);
   }
+
+  sucessoExcluirCadastro = false;
+  alertaSucessoExcluirCadastro() {
+    this.sucessoExcluirCadastro = true;
+    setTimeout(() => {
+      this.sucessoExcluirCadastro = false;
+    }, 3000);
+  }
+
   /*Alerta Falha Editar Cadastro Componente Editar Cadastro*/
   falhaEditarCadastro = false;
   alertaFalhaEditarCadastro() {

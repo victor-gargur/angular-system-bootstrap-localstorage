@@ -65,6 +65,14 @@
 </div>
 
 <div
+  class="alert-position alert alert-success d-flex align-items-center"
+  role="alert"
+  *ngIf="this.alertaService.sucessoExcluirCadastro"
+>
+  Cadastro excluido com sucesso!
+</div>
+
+<div
   class="alert-position alert alert-danger"
   role="alert"
   *ngIf="this.alertaService.falhaEditarCadastro"

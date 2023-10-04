@@ -120,4 +120,20 @@ export class EditarCadastroAlunoComponent implements OnInit {
       this.alertaService.alertaFalhaEditarCadastro();
     }
   }
+
+  confirmarExcluirCadastro(teste: boolean) {
+    if (teste) {
+      return this.excluirCadastro();
+    }
+  }
+
+  excluirCadastro() {
+    const cadastroExcluido = this.cadastrosAtuais.filter(
+      (aluno) => aluno.idAluno !== this.cadastroEditado!.idAluno
+    );
+    this.cadastrosAtuais = cadastroExcluido;
+    localStorage.setItem('cadastroAluno', JSON.stringify(this.cadastrosAtuais));
+    this.router.navigate(['/aluno/lista-cadastros']);
+    this.alertaService.alertaSucessoExcluirCadastro();
+  }
 }
