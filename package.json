@@ -1,5 +1,5 @@
 {
-  "name": "angular-localstorage-aluno-notas-crud",
+  "name": "angular-system-bootstrap-localstorage",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
