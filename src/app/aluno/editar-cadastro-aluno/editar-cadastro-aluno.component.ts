@@ -99,7 +99,7 @@ export class EditarCadastroAlunoComponent implements OnInit {
   }
   /*Método para envio do formulário de cadastro*/
   formSubmit() {
-    /*Atualizacao de dados de cadastros existentes e dos dados preenchidos para o novo cadastro*/
+    /*Atualizacao de dados de cadastros existentes e dos dados preenchidos para alteração do cadastro*/
     const cadastros = this.cadastroService.atualizarCadastros();
     const dadosCadastroAluno: IAlunoCadastro = {
       nomeAluno: this.formControl.get('nomeAluno')!.value!,
@@ -111,16 +111,35 @@ export class EditarCadastroAlunoComponent implements OnInit {
       idAluno: this.cadastroEditado!.idAluno,
       resultadoAluno: this.cadastroEditado!.resultadoAluno,
     };
-
-    /*Validacao do Form Reativo*/
-    if (this.formControl.valid) {
-      this.cadastroService.editarAluno(dadosCadastroAluno);
-      this.alertaService.alertaSucessoEditarCadastro();
-    } else {
-      this.alertaService.alertaFalhaEditarCadastro();
+    /*Criação constante para validação de Email e CPF*/
+    const autenticacaoEmail =
+      this.cadastroService.autenticarEmailExistenteEditarCadastro(
+        this.cadastroEditado!,
+        dadosCadastroAluno,
+        cadastros
+      );
+    const autenticacaoCPF =
+      this.cadastroService.autenticarCpfExistenteEditarCadastro(
+        this.cadastroEditado!,
+        dadosCadastroAluno,
+        cadastros
+      );
+    /*Validacao de Email e CPF existente*/
+    if (!autenticacaoEmail && !autenticacaoCPF) {
+      /*Validacao do Form Reativo*/
+      if (this.formControl.valid) {
+        this.cadastroService.editarAluno(dadosCadastroAluno);
+        this.cadastroEditado! = dadosCadastroAluno;
+        this.alertaService.alertaSucessoEditarCadastro();
+      } else {
+        this.alertaService.alertaFalhaCriarCadastro();
+      }
+    } else if (autenticacaoCPF) {
+      this.alertaService.alertaCpfExistente();
+    } else if (autenticacaoEmail) {
+      this.alertaService.alertaEmailExistente();
     }
   }
-
   confirmarExcluirCadastro(teste: boolean) {
     if (teste) {
       return this.excluirCadastro();

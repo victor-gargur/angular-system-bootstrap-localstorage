@@ -163,7 +163,6 @@ export class AlunoNotaComponent implements OnInit {
         this.resultadoDisciplina[disciplina] = 'Reprovado';
       }
     }
-    console.log(this.notasAluno[disciplina][0]);
     this.resultadoAluno = this.calcularResultadoFinal();
     const idResultadoAluno = {
       idAluno: this.cadastroAluno!.idAluno,

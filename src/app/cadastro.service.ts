@@ -46,6 +46,45 @@ export class CadastroService {
     }
   }
 
+  autenticarCpfExistenteEditarCadastro(
+    dadosCadastroAntesEditar: IAlunoCadastro,
+    dadosCadastroDepoisEditar: IAlunoCadastro,
+    cadastrosAtuais: IAlunoCadastro[]
+  ) {
+    const cadastrosSemCpfAtual = cadastrosAtuais.filter(
+      (aluno) => aluno.cpfAluno !== dadosCadastroAntesEditar.cpfAluno
+    );
+    const autenticacao = cadastrosSemCpfAtual.find(
+      (cadastro) => cadastro.cpfAluno === dadosCadastroDepoisEditar.cpfAluno
+    );
+    if (autenticacao) {
+      return true;
+    }
+    {
+      return false;
+    }
+  }
+
+  autenticarEmailExistenteEditarCadastro(
+    dadosCadastroAntesEditar: IAlunoCadastro,
+    dadosCadastroDepoisEditar: IAlunoCadastro,
+    cadastrosAtuais: IAlunoCadastro[]
+  ) {
+    const cadastrosSemEmailAtual = cadastrosAtuais.filter(
+      (aluno) => aluno.emailAluno !== dadosCadastroAntesEditar.emailAluno
+    );
+    const autenticacao = cadastrosSemEmailAtual.find(
+      (cadastro) => cadastro.emailAluno === dadosCadastroDepoisEditar.emailAluno
+    );
+    console.log(autenticacao);
+    if (autenticacao) {
+      return true;
+    }
+    {
+      return false;
+    }
+  }
+
   gerarID() {
     if (this.cadastros.length === 0) {
       return 1;

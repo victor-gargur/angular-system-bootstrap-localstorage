@@ -46,8 +46,7 @@ export class CriarCadastroAlunoComponent {
     const turmasFiltradas = this.etapasFiltradas?.turmas.filter((etapa) =>
       etapa.includes(this.formControl.get('etapaAluno')?.value!)
     );
-    console.log(this.etapasFiltradas);
-    console.log(this.turmasFiltradas);
+
     return (this.turmasFiltradas = turmasFiltradas);
   }
   /*Método para envio do formulário de cadastro*/
