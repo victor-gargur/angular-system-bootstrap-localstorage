@@ -14,11 +14,7 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 ## Layout
 
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
-
-## Modelo conceitual
-
-![Modelo Conceitual]https://github.com/victor-gargur/angular-system-bootstrap-localstorage/tree/main/src/assets/11.png
+![Modelo Conceitual](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/tree/main/src/assets/11.png)
 
 # Tecnologias utilizadas
 
