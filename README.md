@@ -15,9 +15,9 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 ## Layout
 
 ![Home](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/11.PNG)
-![Cadastro Aluno](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/11.PNG)
-![Lista Alunos](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/11.PNG)
-![Lançamento de Notas](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/11.PNG)
+![Cadastro Aluno](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/12.PNG)
+![Lista Alunos](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/13.PNG)
+![Lançamento de Notas](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/14.PNG)
 
 # Tecnologias utilizadas
 
