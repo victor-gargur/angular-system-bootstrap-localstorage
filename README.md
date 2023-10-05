@@ -14,11 +14,10 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 ## Layout
 
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
-
-## Modelo conceitual
-
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+![Home](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/11.PNG)
+![Cadastro Aluno](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/12.PNG)
+![Lista Alunos](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/13.PNG)
+![Lançamento de Notas](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/14.PNG)
 
 # Tecnologias utilizadas
 
@@ -49,6 +48,7 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 Pré-requisitos: Java 11
 
+<<<<<<< HEAD
 =======
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/LICENSE)
 
@@ -95,6 +95,8 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 # Como executar o projeto
 
+=======
+>>>>>>> 230eb0d1743e66d9a41248a715f6df5d23bd70c0
 ## Back end
 
 Pré-requisitos: Java 11
