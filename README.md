@@ -1,27 +1,81 @@
-# AngularLocalstorageAlunoNotasCrud
+# Gestão para Alunos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/LICENSE)
 
-## Development server
+# Sobre o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+https://victor-gargur.github.io/angular-system-bootstrap-localstorage/
 
-## Code scaffolding
+Gestão para Alunos é uma aplicação front-end construída após a conclusão de uma etapa do curso Start By Capgemini referente a utilização do framework Angular.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A aplicação consiste em um sistema CRUD completo para criação, edição, leitura e cadastro de alunos, assim como o lançamento de notas e gestão de resultado.
 
-## Build
+O Local Storage foi utilizado para o armazenamento dos dados e a responsividade gerada apenas para monitores full hd e notebooks.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Layout
 
-## Running unit tests
+![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Modelo conceitual
 
-## Running end-to-end tests
+![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Tecnologias utilizadas
 
-## Further help
+## Back end
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Java
+- Spring Boot
+- JPA / Hibernate
+- Maven
+
+## Front end
+
+- HTML / CSS / JS / TypeScript
+- ReactJS
+- React Native
+- Apex Charts
+- Expo
+
+## Implantação em produção
+
+- Back end: Heroku
+- Front end web: Netlify
+- Banco de dados: Postgresql
+
+# Como executar o projeto
+
+## Back end
+
+Pré-requisitos: Java 11
+
+```bash
+# clonar repositório
+git clone https://github.com/devsuperior/sds1-wmazoni
+
+# entrar na pasta do projeto back end
+cd backend
+
+# executar o projeto
+./mvnw spring-boot:run
+```
+
+## Front end web
+
+Pré-requisitos: npm / yarn
+
+```bash
+# clonar repositório
+git clone https://github.com/devsuperior/sds1-wmazoni
+
+# entrar na pasta do projeto front end web
+cd front-web
+
+# instalar dependências
+yarn install
+
+# executar o projeto
+yarn start
+```
+
+# Autor
