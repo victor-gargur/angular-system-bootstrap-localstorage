@@ -32,8 +32,7 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 ## Front end web
 
-> > > > > > > a6b9f5a3a63299215186d64b075ecd48506097d1
-> > > > > > > Pré-requisitos: npm / yarn
+Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
