@@ -8,7 +8,7 @@ https://victor-gargur.github.io/angular-system-bootstrap-localstorage/
 
 Gestão para Alunos é uma aplicação front-end construída após a conclusão de uma etapa do curso Start By Capgemini referente a utilização do framework Angular.
 
-A aplicação consiste em um sistema CRUD completo para criação, edição, leitura e cadastro de alunos, assim como o lançamento de notas e gestão de resultado.
+A aplicação consiste em um sistema CRUD completo para criação, edição, exclusão e leitura de cadastros de alunos, assim como o lançamento de notas e gestão de resultado.
 
 O Local Storage foi utilizado para o armazenamento dos dados e a responsividade gerada apenas para monitores full hd e notebooks.
 
@@ -32,21 +32,24 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 ## Front end web
 
-> > > > > > > a6b9f5a3a63299215186d64b075ecd48506097d1
-> > > > > > > Pré-requisitos: npm / yarn
+Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://https://github.com/victor-gargur/angular-system-bootstrap-localstorage
 
 # entrar na pasta do projeto front end web
-cd front-web
+cd angular-system-bootstrap-localstorage
 
 # instalar dependências
-yarn install
+npm install
 
 # executar o projeto
-yarn start
+ng server
 ```
 
 # Autor
+
+Victor Leite Barbosa Gargur
+
+https://www.linkedin.com/in/victor-gargur-2a819219b/
