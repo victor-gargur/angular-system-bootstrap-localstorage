@@ -37,16 +37,20 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://https://github.com/victor-gargur/angular-system-bootstrap-localstorage
 
 # entrar na pasta do projeto front end web
-cd front-web
+cd angular-system-bootstrap-localstorage
 
 # instalar dependências
-yarn install
+npm install
 
 # executar o projeto
-yarn start
+ng server
 ```
 
 # Autor
+
+Victor Leite Barbosa Gargur
+
+https://www.linkedin.com/in/victor-gargur-2a819219b/
