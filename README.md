@@ -14,10 +14,10 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 ## Layout
 
-![Home](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/11.png)
-![Cadastro Aluno](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/12.png)
-![Lista Alunos](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/13.png)
-![Lançamento de Notas](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/14.png)
+![Home](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/home.png)
+![Cadastro Aluno](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/criar-cadastro.png)
+![Lista Alunos](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/lista-cadastros.png)
+![Lançamento de Notas](https://github.com/victor-gargur/angular-system-bootstrap-localstorage/blob/main/src/assets/lancamento-notas.png)
 
 # Tecnologias utilizadas
 
@@ -30,9 +30,7 @@ O Local Storage foi utilizado para o armazenamento dos dados e a responsividade 
 
 # Como executar o projeto
 
-
 ## Front end web
-
 
 > > > > > > > a6b9f5a3a63299215186d64b075ecd48506097d1
 > > > > > > > Pré-requisitos: npm / yarn
