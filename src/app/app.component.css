@@ -6,6 +6,7 @@
     width: 100vw;
     height: 100vh;
     min-height: 900px;
+    min-width: 1040px;
     margin: 0px;
     background: linear-gradient(90deg, rgba(20, 17, 56, 1), rgba(0, 0, 0, 1));
   }
@@ -19,6 +20,7 @@
     width: 100vw;
     height: 100vh;
     min-height: 768px;
+    min-width: 1040px;
     margin: 0px;
     background: linear-gradient(90deg, rgba(20, 17, 56, 1), rgba(0, 0, 0, 1));
   }
