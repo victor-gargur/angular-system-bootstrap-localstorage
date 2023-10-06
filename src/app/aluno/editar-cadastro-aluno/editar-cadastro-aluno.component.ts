@@ -31,7 +31,13 @@ export class EditarCadastroAlunoComponent implements OnInit {
   formControl = this.fb.group({
     nomeAluno: ['', [Validators.required, Validators.minLength(5)]],
     cpfAluno: ['', [Validators.minLength(11), Validators.required]],
-    emailAluno: ['', [Validators.email, Validators.required]],
+    emailAluno: [
+      '',
+      [
+        Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'),
+        Validators.required,
+      ],
+    ],
     escolaAluno: ['', [Validators.required]],
     etapaAluno: ['', [Validators.required]],
     turmaAluno: ['', [Validators.required]],
@@ -63,7 +69,10 @@ export class EditarCadastroAlunoComponent implements OnInit {
       ],
       emailAluno: [
         this.cadastroEditado?.emailAluno || '',
-        [Validators.email, Validators.required],
+        [
+          Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'),
+          Validators.required,
+        ],
       ],
       escolaAluno: [
         this.cadastroEditado?.escolaAluno || '',
