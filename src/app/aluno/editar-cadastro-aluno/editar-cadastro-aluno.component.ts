@@ -30,11 +30,13 @@ export class EditarCadastroAlunoComponent implements OnInit {
   /*Criação Form Reativo*/
   formControl = this.fb.group({
     nomeAluno: ['', [Validators.required, Validators.minLength(5)]],
-    cpfAluno: ['', [Validators.minLength(11), Validators.required]],
+    cpfAluno: ['', [Validators.pattern(''), Validators.required]],
     emailAluno: [
       '',
       [
-        Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'),
+        Validators.pattern(
+          '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})'
+        ),
         Validators.required,
       ],
     ],
@@ -65,12 +67,14 @@ export class EditarCadastroAlunoComponent implements OnInit {
       ],
       cpfAluno: [
         this.cadastroEditado?.cpfAluno || '',
-        [Validators.minLength(11), Validators.required],
+        [Validators.pattern(''), Validators.required],
       ],
       emailAluno: [
         this.cadastroEditado?.emailAluno || '',
         [
-          Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'),
+          Validators.pattern(
+            '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})'
+          ),
           Validators.required,
         ],
       ],

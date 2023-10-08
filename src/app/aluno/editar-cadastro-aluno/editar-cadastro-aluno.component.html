@@ -25,14 +25,23 @@
         />
         <label for="floatingInput">Nome Completo</label>
       </div>
-      <!--Div campo inválido-->
+      <!--Div campo inválido com touched-->
+      <div
+        *ngIf="
+          formControl.controls['nomeAluno'].invalid &&
+          formControl.controls['nomeAluno'].touched
+        "
+      >
+        <!--Variações de texto-->
+        <small *ngIf="formControl.controls['nomeAluno'].hasError('minlength')">
+          Mínimo de 5 caracteres
+        </small>
+      </div>
+      <!--Div campo inválido com form Submit-->
       <div
         *ngIf="formControl.controls['nomeAluno'].invalid && formDir.submitted"
       >
         <!--Variações de texto-->
-        <small *ngIf="formControl.controls['nomeAluno'].hasError('minlength')">
-          Mínimo de 5 caracteres.
-        </small>
         <small *ngIf="formControl.controls['nomeAluno'].hasError('required')">
           Campo obrigatório
         </small>
@@ -56,14 +65,23 @@
         />
         <label for="floatingInput">CPF</label>
       </div>
-      <!--Div campo inválido-->
+      <!--Div campo inválido com touched-->
+      <div
+        *ngIf="
+          formControl.controls['cpfAluno'].invalid &&
+          formControl.controls['cpfAluno'].touched
+        "
+      >
+        <!--Variações de texto-->
+        <small *ngIf="formControl.controls['cpfAluno'].hasError('pattern')">
+          CPF inválido
+        </small>
+      </div>
+      <!--Div campo inválido com form Submit-->
       <div
         *ngIf="formControl.controls['cpfAluno'].invalid && formDir.submitted"
       >
         <!--Variações de texto-->
-        <small *ngIf="formControl.controls['cpfAluno'].hasError('minlength')">
-          CPF inválido
-        </small>
         <small *ngIf="formControl.controls['cpfAluno'].hasError('required')">
           Campo obrigatório
         </small>
@@ -85,16 +103,25 @@
           "
         />
         <label for="floatingInput">Email</label>
-        <!--Div campo inválido-->
+        <!--Div campo inválido com touched-->
         <div
           *ngIf="
-            formControl.controls['emailAluno'].invalid && formDir.submitted
+            formControl.controls['emailAluno'].invalid &&
+            formControl.controls['emailAluno'].touched
           "
         >
           <!--Variações de texto-->
           <small *ngIf="formControl.controls['emailAluno'].hasError('pattern')">
             Email inválido
           </small>
+        </div>
+        <!--Div campo inválido com form Submit-->
+        <div
+          *ngIf="
+            formControl.controls['emailAluno'].invalid && formDir.submitted
+          "
+        >
+          <!--Variações de texto-->
           <small
             *ngIf="formControl.controls['emailAluno'].hasError('required')"
           >

@@ -19,7 +19,15 @@ export class CriarCadastroAlunoComponent {
   /*Criação Form Reativo*/
   formControl = this.fb.group({
     nomeAluno: ['', [Validators.required, Validators.minLength(5)]],
-    cpfAluno: ['', [Validators.minLength(11), Validators.required]],
+    cpfAluno: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(
+          '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})'
+        ),
+      ],
+    ],
     emailAluno: [
       '',
       [
